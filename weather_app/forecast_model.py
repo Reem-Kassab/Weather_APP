@@ -3,7 +3,11 @@ import os
 from dotenv import load_dotenv
 from utils import kelvin_to_celsius
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # load .env only if it exists
+except ModuleNotFoundError:
+    pass  # on Streamlit Cloud, dotenv is not installed
 
 # Get API key from environment variables
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
@@ -43,4 +47,5 @@ def get_weather_forecast(city: str) -> dict:
 
         return result
     else:
+
         return {"error": f"Failed to fetch forecast: {response.status_code}"}
