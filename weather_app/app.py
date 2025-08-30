@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 
 # import your existing modules 
-from weather_db import init_db
+from weather_db_init import init_db
 from weather_API import get_current_weather
 from forecast_model import get_weather_forecast
 from weather_db import (
@@ -211,4 +211,5 @@ if forecast_city:
 # --------------------------
 st.markdown("---")
 st.markdown("Made with ❤️ — shows current weather saved to a local SQLite DB. Use the sidebar to request weather or load history.")
+
 
