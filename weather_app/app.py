@@ -3,7 +3,8 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-# import your existing modules (names exactly as you provided)
+# import your existing modules 
+from weather_db import init_db
 from weather_API import get_current_weather
 from forecast_model import get_weather_forecast
 from weather_db import (
@@ -55,7 +56,8 @@ def history_to_df(history: list) -> pd.DataFrame:
 # --------------------------
 st.set_page_config(page_title="Weather Dashboard", layout="wide")
 st.title("🌤️ Weather Dashboard")
-
+# Initialize database on app start
+init_db()
 # --------------------------
 # Sidebar - user actions
 # --------------------------
@@ -209,3 +211,4 @@ if forecast_city:
 # --------------------------
 st.markdown("---")
 st.markdown("Made with ❤️ — shows current weather saved to a local SQLite DB. Use the sidebar to request weather or load history.")
+
