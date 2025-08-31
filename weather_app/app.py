@@ -208,8 +208,18 @@ if forecast_city:
 
 # --------------------------
 # Footer / Info
+st.sidebar.markdown("### ℹ️ About PM Accelerator")
+if st.sidebar.button("Show PM Accelerator Info"):
+    st.sidebar.info(
+        """
+        The Product Manager Accelerator Program is designed to support PM professionals through every stage of their careers. From students looking for entry-level jobs to Directors looking to take on a leadership role, our program has helped over hundreds of students fulfill their career aspirations.
+        Our Product Manager Accelerator community are ambitious and committed. Through our program they have learnt, honed and developed new PM and leadership skills, giving them a strong foundation for their future endeavors. 
+        You can check their LinkedIn page [here](https://www.linkedin.com/school/pmaccelerator/).
+        """
+    )
 # --------------------------
 st.markdown("---")
-st.markdown("Made with ❤️ — shows current weather saved to a local SQLite DB. Use the sidebar to request weather or load history.")
+st.markdown("Developed by **Reem Kassab** | AI And Machine Learing Engineer .")
+
 
 
